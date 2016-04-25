@@ -45,15 +45,20 @@ train <- train[-c(7:40, 47:120, 127:561)]
 train$subject <- sub2$V1
 train$activity <- act2
 # Join test and train into total
-tot <- rbind(test, train)
+total <- rbind(test, train)
+# Remove unwanted characters from variables' names
 names <- colnames(total)
 names <- gsub("-", "", names)
 names <- gsub("mean", "Mean", names)
 names <- gsub("std", "Std", names)
 names <- gsub("\\(\\)", "", names)
+# Rename variables
 colnames(total) <- names
+# Melt subject and activity variables to perform summary
 library(reshape2)
 melted <- melt(total, id.vars = c("subject", "activity"))
+# Summarize variables and show their mean
 library(plyr)
 result <- ddply(melted, c("subject", "activity", "variable"), summarise, mean = mean(value))
+# Export to file
 write.table(result, "result.txt", row.name = FALSE)
