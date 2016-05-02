@@ -18,7 +18,7 @@ var1 <- read.table("features.txt")
 # Name test variables
 colnames(test) <- var1$V2
 # Remove unwanted variables
-test <- test[-c(7:40, 47:120, 127:561)]
+test <- test[-c(7:40, 47:80, 87:120, 127:160, 167:200, 203:213, 216:226, 229:239, 242:252, 255:265, 272:293, 297:344, 351:372, 376:423, 430:451, 455:502, 505:512, 514:515, 518:528, 531:541, 544:554)]
 # Add to test data subject and activity columns
 test$subject <- sub1$V1
 test$activity <- act1
@@ -40,25 +40,18 @@ act2[grepl(6, act2)] <- "LAYING"
 # Name train variables
 colnames(train) <- var1$V2
 # Remove unwanted variables
-train <- train[-c(7:40, 47:120, 127:561)]
+train <- train[-c(7:40, 47:80, 87:120, 127:160, 167:200, 203:213, 216:226, 229:239, 242:252, 255:265, 272:293, 297:344, 351:372, 376:423, 430:451, 455:502, 505:512, 514:515, 518:528, 531:541, 544:554)]
 # Add to train data subject and activity columns
 train$subject <- sub2$V1
 train$activity <- act2
 # Join test and train into total
 total <- rbind(test, train)
-# Remove unwanted characters from variables' names
 names <- colnames(total)
 names <- gsub("-", "", names)
 names <- gsub("mean", "Mean", names)
 names <- gsub("std", "Std", names)
 names <- gsub("\\(\\)", "", names)
-# Rename variables
 colnames(total) <- names
-# Melt subject and activity variables to perform summary
-library(reshape2)
-melted <- melt(total, id.vars = c("subject", "activity"))
-# Summarize variables and show their mean
-library(plyr)
-result <- ddply(melted, c("subject", "activity", "variable"), summarise, mean = mean(value))
-# Export to file
+library(dplyr)
+result <- total %>% group_by(subject, activity) %>% summarise_each(funs(mean))
 write.table(result, "result.txt", row.name = FALSE)
