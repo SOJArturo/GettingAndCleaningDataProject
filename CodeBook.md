@@ -2,23 +2,44 @@
 
   To get a complete account of the experiment and all the variables contained in it, go to http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
   
-  The explanation of the variables concerning this project is as follows:
+  The following excerpt (taken from the mentioned source), reproduces the relevant features of the dataset presented as result of the project:
+  
+  The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 't' to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz. 
 
-* tBodyAccelMeanX - Mean of the time domain signal of the subject's body acceleration in the X-direction
-* tBodyAccelMeanY - Mean of the time domain signal of the subject's body acceleration in the Y-direction
-* tBodyAccelMeanZ - Mean of the time domain signal of the subject's body acceleration in the Z-direction
-* tBodyAccStdX - Standard deviation of the time domain signal of the subject's body acceleration in the X-Direction
-* tBodyAccStdY - Standard deviation of the time domain signal of the subject's body acceleration in the Y-Direction
-* tBodyAccStdZ - Standard deviation of the time domain signal of the subject's body acceleration in the Z-Direction
-* tGravityAccMeanX - Mean of the time domain signal of the subject's gravity acceleration in the X-Direction
-* tGravityAccMeanY - Mean of the time domain signal of the subject's gravity acceleration in the Y-Direction
-* tGravityAccMeanZ - Mean of the time domain signal of the subject's gravity acceleration in the Z-Direction
-* tGravityAccStdX - Standard deviation of the time domain signal of the subject's gravity acceleration in the X-Direction
-* tGravityAccStdY - Standard deviation of the time domain signal of the subject's gravity acceleration in the Y-Direction
-* tGravityAccStdZ - Standard deviation of the time domain signal of the subject's gravity acceleration in the Z-Direction
-* tBodyGyroMeanX - Mean of the time domain signal of the subject's gyroscope measurement in the X-Direction
-* tBodyGyroMeanY - Mean of the time domain signal of the subject's gyroscope measurement in the Y-Direction
-* tBodyGyroMeanZ - Mean of the time domain signal of the subject's gyroscope measurement in the Z-Direction
-* tBodyGyroStdX - Standard deviation of the time domain signal of the subject's gyroscope measurement in the X-Direction
-* tBodyGyroStdY - Standard deviation of the time domain signal of the subject's gyroscope measurement in the Y-Direction
-* tBodyGyroStdZ - Standard deviation of the time domain signal of the subject's gyroscope measurement in the Z-Direction
+Subsequently, the body linear acceleration and angular velocity were derived in time to obtain Jerk signals (tBodyAccJerk-XYZ and tBodyGyroJerk-XYZ). Also the magnitude of these three-dimensional signals were calculated using the Euclidean norm (tBodyAccMag, tGravityAccMag, tBodyAccJerkMag, tBodyGyroMag, tBodyGyroJerkMag). 
+
+Finally a Fast Fourier Transform (FFT) was applied to some of these signals producing fBodyAcc-XYZ, fBodyAccJerk-XYZ, fBodyGyro-XYZ, fBodyAccJerkMag, fBodyGyroMag, fBodyGyroJerkMag. (Note the 'f' to indicate frequency domain signals). 
+
+These signals were used to estimate variables of the feature vector for each pattern:  
+'-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.
+
+tBodyAcc-XYZ
+tGravityAcc-XYZ
+tBodyAccJerk-XYZ
+tBodyGyro-XYZ
+tBodyGyroJerk-XYZ
+tBodyAccMag
+tGravityAccMag
+tBodyAccJerkMag
+tBodyGyroMag
+tBodyGyroJerkMag
+fBodyAcc-XYZ
+fBodyAccJerk-XYZ
+fBodyGyro-XYZ
+fBodyAccMag
+fBodyAccJerkMag
+fBodyGyroMag
+fBodyGyroJerkMag
+
+The set of variables that were estimated from these signals are: 
+
+mean(): Mean value
+std(): Standard deviation
+
+Additional vectors obtained by averaging the signals in a signal window sample. These are used on the angle() variable:
+
+gravityMean
+tBodyAccMean
+tBodyAccJerkMean
+tBodyGyroMean
+tBodyGyroJerkMean
