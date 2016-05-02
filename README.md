@@ -21,28 +21,3 @@ With the activities properly named, each dataset is composed by adding to the or
 Once the two datasets have been combined into one (called total), the program then names the variables according to the code in the *features.txt* file.  Then it eliminates 541 of the original variables, and keeps the 20 variables that are direct original measurements as well as the *subject* and *activity* identifiers.
 
 Finally, the program groups the entire dataset by *subject* and by *activity* to calculate the mean of the remaining variables.  Once the calculation of the means is accomplished, the program exports the results to the file "result.txt" located in the root of the working directory.
-
-## Code Book
-
-  To get a complete account of the experiment and all the variables contained in it, go to http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
-  
-  The explanation of the variables concerning this project is as follows:
-
-* tBodyAccelMeanX - Mean of the time domain signal of the subject's body acceleration in the X-direction
-* tBodyAccelMeanY - Mean of the time domain signal of the subject's body acceleration in the Y-direction
-* tBodyAccelMeanZ - Mean of the time domain signal of the subject's body acceleration in the Z-direction
-* tBodyAccStdX - Standard deviation of the time domain signal of the subject's body acceleration in the X-Direction
-* tBodyAccStdY - Standard deviation of the time domain signal of the subject's body acceleration in the Y-Direction
-* tBodyAccStdZ - Standard deviation of the time domain signal of the subject's body acceleration in the Z-Direction
-* tGravityAccMeanX - Mean of the time domain signal of the subject's gravity acceleration in the X-Direction
-* tGravityAccMeanY - Mean of the time domain signal of the subject's gravity acceleration in the Y-Direction
-* tGravityAccMeanZ - Mean of the time domain signal of the subject's gravity acceleration in the Z-Direction
-* tGravityAccStdX - Standard deviation of the time domain signal of the subject's gravity acceleration in the X-Direction
-* tGravityAccStdY - Standard deviation of the time domain signal of the subject's gravity acceleration in the Y-Direction
-* tGravityAccStdZ - Standard deviation of the time domain signal of the subject's gravity acceleration in the Z-Direction
-* tBodyGyroMeanX - Mean of the time domain signal of the subject's gyroscope measurement in the X-Direction
-* tBodyGyroMeanY - Mean of the time domain signal of the subject's gyroscope measurement in the Y-Direction
-* tBodyGyroMeanZ - Mean of the time domain signal of the subject's gyroscope measurement in the Z-Direction
-* tBodyGyroStdX - Standard deviation of the time domain signal of the subject's gyroscope measurement in the X-Direction
-* tBodyGyroStdY - Standard deviation of the time domain signal of the subject's gyroscope measurement in the Y-Direction
-* tBodyGyroStdZ - Standard deviation of the time domain signal of the subject's gyroscope measurement in the Z-Direction
